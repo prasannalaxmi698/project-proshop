@@ -1,12 +1,11 @@
 import Axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link, useNavigate } from 'react-router-dom';
-import { ListGroup, Button, Card, Col, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { ListGroup, Card, Col, Row } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
 import { Store } from '../Store';
-import CheckoutSteps from '../components/CheckoutSteps';
 import LoadingBox from '../components/LoadingBox';
 
 const reducer = (state, action) => {
@@ -22,7 +21,7 @@ const reducer = (state, action) => {
   }
 };
 
-export default function PlaceOrderScreen() {
+export default function ProfileScreen() {
   const navigate = useNavigate();
 
   const [{ loading }, dispatch] = useReducer(reducer, {
@@ -40,7 +39,7 @@ export default function PlaceOrderScreen() {
   cart.taxPrice = round2(0.15 * cart.itemsPrice);
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
 
-  const placeOrderHandler = async () => {
+  const plrofileHandler = async () => {
     try {
       dispatch({ type: 'CREATE_REQUEST' });
 
@@ -78,11 +77,10 @@ export default function PlaceOrderScreen() {
   }, [cart, navigate]);
   return (
     <div>
-      <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
       <Helmet>
         <title>Preview Order</title>
       </Helmet>
-      <h1 className="my-3">Preview Order</h1>
+      <h1 className="my-3">Profile Details</h1>
       <Row>
         <Col md={8}>
           <Card className="mb-3">
@@ -94,7 +92,6 @@ export default function PlaceOrderScreen() {
                 {cart.shippingAddress.city}, {cart.shippingAddress.postalCode},
                 {cart.shippingAddress.country}
               </Card.Text>
-              <Link to="/shipping">Edit</Link>
             </Card.Body>
           </Card>
           <Card className="mb-3">
@@ -103,7 +100,6 @@ export default function PlaceOrderScreen() {
               <Card.Text>
                 <strong>Method:</strong> {cart.paymentMethod}
               </Card.Text>
-              <Link to="/payment">Edit</Link>
             </Card.Body>
           </Card>
           <Card className="mb-3">
@@ -119,7 +115,6 @@ export default function PlaceOrderScreen() {
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
-                        <Link to={`/product/${item.slug}`}>{item.name}</Link>
                       </Col>
                       <Col md={3}>
                         <span>{item.quantity}</span>
@@ -129,7 +124,6 @@ export default function PlaceOrderScreen() {
                   </ListGroup.Item>
                 ))}
               </ListGroup>
-              <Link to="/cart">Edit</Link>
             </Card.Body>
           </Card>
         </Col>

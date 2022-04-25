@@ -108,6 +108,7 @@ export default function CartScreen() {
                 <ListGroup.Item>
                   <div className="d-grid">
                     <Button
+                      className="btn btn-dark"
                       type="button"
                       variant="primary"
                       onClick={checkoutHandler}
