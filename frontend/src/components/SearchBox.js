@@ -15,9 +15,10 @@ export default function SearchBox() {
   };
 
   return (
-    <Form className="d-flex me-auto" onSubmit={submitHandler}>
+    <Form onSubmit={submitHandler}>
       <InputGroup>
         <FormControl
+          style={{ padding: '0.5rem' }}
           type="text"
           name="q"
           id="q"
@@ -26,8 +27,17 @@ export default function SearchBox() {
           aria-label="Search Products"
           aria-describedby="button-search"
         ></FormControl>
-        <Button className="btn btn-dark" type="submit" id="button-search">
-          SEARCH
+
+        <Button
+          className="btn btn-dark"
+          style={{
+            color: '#268763',
+            backgroundColor: '#404040',
+            border: '2px solid #268763',
+            padding: '0.5rem',
+          }}
+        >
+          <strong>SEARCH</strong>
         </Button>
       </InputGroup>
     </Form>

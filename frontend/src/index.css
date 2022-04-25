@@ -30,7 +30,7 @@ header {
   padding: 1rem;
   background-color: #03270e;
 } */
-.search-btn {
+/* .search-btn {
   background-color: #000000;
   color: #03270e;
 }
@@ -38,6 +38,19 @@ header {
 .btn-outline-primary {
   background-color: #000000;
   color: #03270e;
+} */
+
+/* .btn {
+  border: 2px solid black;
+  background-color: white;
+  color: rgb(4, 15, 4);
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+} */
+.btn-search {
+  border-color: #0f0f0f;
+  color: #0f0f0f;
 }
 .nav-link {
   color: #fff;
