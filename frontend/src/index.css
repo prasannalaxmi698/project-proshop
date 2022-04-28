@@ -58,6 +58,13 @@ header {
 .site-container {
   min-height: 100vh;
 }
+.order {
+  margin-top: 1rem;
+}
+/* .profile-container {
+  max-width: 600px;
+  padding: 1px;
+} */
 main {
   flex: 1;
 }
