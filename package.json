@@ -4,8 +4,8 @@
   "description": "1. Installation of Tools\r 2. Create React app\r 3. added header and css for header in index.js\r 4. installed react-router-dom for routing\r 5. added homescreen and productscreen\r 6. created backend folder in proshop\r 7. install express and created server file and started running server.js file\r 8. install nodemon \"npm i nodemon --save-dev\" nodemon restart the project automatically when changes made",
   "main": "index.js",
   "scripts": {
-    "build": "cd backend && npm instal && cd ../frontend && npm install && npm run build",
-    "start": "node backend/server.js ",
+    "build": "cd backend && npm install  && cd ../frontend && npm install && npm run build",
+    "start": "node backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
